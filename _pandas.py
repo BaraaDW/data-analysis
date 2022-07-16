@@ -4,15 +4,15 @@ import pandas as pd
 print(f' Version : {pd.__version__}')
 
 # __________________Introduction___________________
-# info = pd.read_csv('data.csv')
-# print(info)
-# print(type(info))  # DataFrame
-# print(len(info))  # count of rows [without column names]
+# data_frame = pd.read_csv('data.csv')
+# print(data_frame)
+# print(type(data_frame))  # DataFrame
+# print(len(data_frame))  # count of rows [without column names]
 
-# print(info[:1])  # show first row + [-with column name-]
+# print(data_frame[:1])  # show first row + [-with column name-]
 
-# print(info.to_string())
-# print(type(info.to_string()))  # str
+# print(data_frame.to_string())
+# print(type(data_frame.to_string()))  # str
 
 # ______________________Started_______________________
 # data_set = {key : "column_name", value : [rows]}
@@ -23,7 +23,7 @@ print(f' Version : {pd.__version__}')
 
 # data_frame = pd.DataFrame(data_set)
 
-# print(data_frame)
+# print(data_frame['cars'])  # print column
 # print(type(data_frame))  # DataFrame
 # print(len(data_frame))  # count of rows [without column names]
 
@@ -63,6 +63,9 @@ print(f' Version : {pd.__version__}')
 # data_frame = pd.DataFrame(data_set)
 # print(data_frame)
 
+# column = data_frame['calories']
+# print(column)
+
 # row = data_frame.loc[0]  # Series
 # print(row)
 # print(row['calories'])  # 420
@@ -80,6 +83,9 @@ print(f' Version : {pd.__version__}')
 # data_frame = pd.DataFrame(data_set, index=['day1', 'day2', 'day3'])
 # print(data_frame)
 
+# column = data_frame['calories']
+# print(column)
+
 # row = data_frame.loc['day1']  # Series
 # print(row)
 # print(row['calories'])  # 420
@@ -93,3 +99,19 @@ print(f' Version : {pd.__version__}')
 # print(rows['duration'])  # 50 - 45
 
 # ______________________Read CSV______________________
+
+# data_frame = pd.read_csv('data_set.csv')
+
+# pd.options.display.max_rows = 2  # max rows that system show
+
+# print(len(data_frame))
+
+# print(data_frame)
+
+# print(data_frame.head())  # By default will get first 5 rows
+# print(data_frame.head(10))  # first 10 rows
+
+# print(data_frame.tail())  # By default will get last 5 rows
+# print(data_frame.tail(10))  # last 10 rows
+
+# ______________________Read JSON______________________
