@@ -28,7 +28,7 @@ print(f' Version : {pd.__version__}')
 # print(len(data_frame))  # count of rows [without column names]
 
 # ______________________Series_______________________
-# a = [1, 7, 2]
+# a = [5, 6, 7]
 
 # series = pd.Series(a)
 
@@ -57,7 +57,8 @@ print(f' Version : {pd.__version__}')
 # ______________________DataFrames______________________
 # data_set = {
 #   "calories": [420, 380, 390],
-#   "duration": [50, 40, 45]
+#   "duration": [50, 40, 45],
+#   "meta": [10, 20, 30]
 # }
 
 # data_frame = pd.DataFrame(data_set)
@@ -65,6 +66,10 @@ print(f' Version : {pd.__version__}')
 
 # column = data_frame['calories']
 # print(column)
+# print(column[1])
+
+# columns = data_frame[['calories', 'meta', 'duration']]
+# print(columns)
 
 # row = data_frame.loc[0]  # Series
 # print(row)
@@ -85,6 +90,7 @@ print(f' Version : {pd.__version__}')
 
 # column = data_frame['calories']
 # print(column)
+# print(column['day2'])
 
 # row = data_frame.loc['day1']  # Series
 # print(row)
@@ -113,5 +119,24 @@ print(f' Version : {pd.__version__}')
 
 # print(data_frame.tail())  # By default will get last 5 rows
 # print(data_frame.tail(10))  # last 10 rows
+
+# ______________________Write CSV______________________
+
+# data_set = {'item': ['iphone5'], 'count': [50], 'cost': [500]}
+
+# data_frame = pd.DataFrame(data_set)
+# print(data_frame)
+
+# first time
+# columns_name = ['item', 'count', 'cost']
+# data_frame.to_csv("insert.csv", index=True, header=columns_name, sep=',', mode='a')
+
+# second time
+# data_frame.to_csv("insert.csv", index=True, header=False, sep=',', mode='a')
+
+# (index) --> insert the index as a cell
+# (header) --> insert the columns name (-at the first-)
+# (sep) must be ',' to insert each value in cell
+# (mode = a) to Append DataFrame to existing CSV File
 
 # ______________________Read JSON______________________
