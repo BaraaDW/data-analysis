@@ -55,3 +55,41 @@ print(f' Version : {pd.__version__}')
 # print(series['day1'])
 
 # ______________________DataFrames______________________
+# data_set = {
+#   "calories": [420, 380, 390],
+#   "duration": [50, 40, 45]
+# }
+
+# data_frame = pd.DataFrame(data_set)
+# print(data_frame)
+
+# row = data_frame.loc[0]  # Series
+# print(row)
+# print(row['calories'])  # 420
+
+# rows = data_frame.loc[0:1]  # DataFrame
+# print(rows)
+# print(rows['calories'])  # 420 - 380
+
+# rows = data_frame.loc[[0, 2]]  # DataFrame
+# print(rows)
+# print(rows['duration'])  # 50 - 45
+
+# --------------------
+
+# data_frame = pd.DataFrame(data_set, index=['day1', 'day2', 'day3'])
+# print(data_frame)
+
+# row = data_frame.loc['day1']  # Series
+# print(row)
+# print(row['calories'])  # 420
+
+# rows = data_frame.loc['day1':'day2']  # DataFrame
+# print(rows)
+# print(rows['calories'])  # 420 - 380
+
+# rows = data_frame.loc[['day1', 'day3']]  # DataFrame
+# print(rows)
+# print(rows['duration'])  # 50 - 45
+
+# ______________________Read CSV______________________
