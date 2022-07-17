@@ -61,6 +61,12 @@ print(f' Version : {pd.__version__}')
 #   "meta": [10, 20, 30]
 # }
 
+# data_set = {
+#   "item": {'a': 'iphone', 'b': 'nokia', 'c': 'samsung'},
+#   "count": {'a': '50', 'b': '75', 'c': '100'},
+#   "price": {'a': '800', 'b': '200', 'c': '500'}
+# }
+
 # data_frame = pd.DataFrame(data_set)
 # print(data_frame)
 
@@ -140,4 +146,20 @@ print(f' Version : {pd.__version__}')
 # (mode = a) to Append DataFrame to existing CSV File
 
 # ______________________Read JSON______________________
+# data_frame = pd.read_json('data.json')
+# print(data_frame)
 
+# ______________________Write JSON______________________
+# data_set = {
+#   "calories": [420, 380, 390],
+#   "duration": [50, 40, 45],
+#   "meta": [10, 20, 30]
+# }
+
+# data_frame = pd.DataFrame(data_set)
+# data_frame = pd.DataFrame(data_set, index=['a', 'b', 'c'])
+# print(data_frame)
+
+# data_frame.to_json("insert.json")
+
+# ______________________Analyzing DataFrames______________________
