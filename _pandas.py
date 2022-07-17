@@ -162,4 +162,75 @@ print(f' Version : {pd.__version__}')
 
 # data_frame.to_json("insert.json")
 
-# ______________________Analyzing DataFrames______________________
+# ______________________Data Cleaning______________________
+
+data_frame = pd.read_csv('dirtydata.csv')
+print(data_frame)  # 32 rows
+
+# __________________________
+# (0) Math
+
+# mean = data_frame["Calories"].mean()  # the average value
+# print(f'mean is {mean}')
+
+# median = data_frame["Calories"].median()  # the value in the middle, after you have sorted
+# print(f'median is {median}')
+
+# mode = data_frame["Calories"].mode()  # the value that appears most frequently.
+# print(f'mode is {mode}')
+
+# __________________________
+# (1) Empty Value:
+
+# new_data_frame = data_frame.dropna()  # remove all rows that have a value NAN
+# print(new_data_frame)  # 29 rows
+
+# data_frame.dropna(inplace=True)
+# print(data_frame)  # 29 rows
+
+# data_frame.dropna(subset=['Calories'], inplace=True)
+# print(data_frame)
+
+# -----------------------
+# data_frame.fillna(130, inplace=True)  # replace empty cell with value
+# print(data_frame)
+
+# data_frame["Calories"].fillna(300, inplace=True)
+# print(data_frame)
+
+# __________________________
+# (2) Wrong Format:
+
+# data_frame['Date'] = pd.to_datetime(data_frame['Date'])
+# print(data_frame)
+
+# data_frame.dropna(subset=['Date'], inplace=True)  # dropna (remove row have NAN)
+# print(data_frame)
+
+# __________________________
+# (3) Wrong Data:
+
+# print(data_frame.loc[7, 'Duration'])    # [ - - DW - - ]
+
+# data_frame.loc[7, 'Duration'] = 45
+# print(data_frame)
+
+# for index in data_frame.index:
+#     if data_frame.loc[index, "Duration"] > 60:
+#         data_frame.loc[index, "Duration"] = 60
+# print(data_frame)
+
+# for index in data_frame.index:
+#     if data_frame.loc[index, "Duration"] > 120:
+#         data_frame.drop(index, inplace=True)      # dropna (remove row have NAN) , drop (remove any row)
+# print(data_frame)
+
+# __________________________
+# (3) Wrong Data:
+
+# print(data_frame.duplicated())
+
+# data_frame.drop_duplicates(inplace=True)
+
+# ______________________(Data Correlations) Finding Relationships______________________
+
